@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add to your global CSS file or a Tailwind CSS config */
+.cell-input {
+  border: 1px solid var(--border-color, gray);
+  padding: 8px;
+  background-color: var(--bg-color, white);
+  color: var(--text-color, black);
+  text-align: var(--text-align, left);
+  font-size: var(--font-size, 14px);
+}
+/* Add to your global stylesheet or in a <style> block */
+.column-header {
+  position: relative;
+}
+
+.column-header .resizer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px; /* Width of the resizer */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: col-resize;
+}
+
+
