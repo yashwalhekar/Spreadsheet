@@ -17,7 +17,7 @@ const CellFormatting = () => {
     setAlignment(cell.alignment || 'left');
     setFontSize(cell.fontSize || '14px');
     setBackgroundColor(cell.backgroundColor || '#ffffff');
-  }, [selectedCell, pages, currentPage]); // Dependencies ensure updates on selection change
+  }, [selectedCell, pages, currentPage]);
 
   const handleApplyFormatting = () => {
     if (selectedCell) {
@@ -28,44 +28,48 @@ const CellFormatting = () => {
   };
 
   return (
-    <div className="p-4 border rounded bg-gray-100">
-      <h3 className="text-lg font-bold mb-2">Cell Formatting</h3>
-      <div className="mb-4">
-        <label className="block mb-2">Text Alignment:</label>
+    <div className="flex items-center space-x-4 p-2 bg-green-700 border-b">
+      <h3 className="text-lg font-bold text-white">Formatting Toolbar</h3>
+
+      <div className="flex items-center space-x-2">
+        <label className=' text-white'>Text Alignment:</label>
         <select
           value={alignment}
           onChange={(e) => setAlignment(e.target.value)}
-          className="border border-gray-300 p-2 rounded w-full"
+          className="border border-gray-300 p-1 rounded"
         >
           <option value="left">Left</option>
           <option value="center">Center</option>
           <option value="right">Right</option>
         </select>
       </div>
-      <div className="mb-4">
-        <label className="block mb-2">Font Size:</label>
+
+      <div className="flex items-center space-x-2">
+        <label className=' text-white'>Font Size:</label>
         <input
           type="text"
           value={fontSize}
           onChange={(e) => setFontSize(e.target.value)}
-          placeholder="Font Size (e.g., 14px)"
-          className="border border-gray-300 p-2 rounded w-full"
+          placeholder="Font Size"
+          className="border border-gray-300 p-1 rounded w-20"
         />
       </div>
-      <div className="mb-4">
-        <label className="block mb-2">Background Color:</label>
+
+      <div className="flex items-center space-x-2">
+        <label className=' text-white'>Background Color:</label>
         <input
           type="color"
           value={backgroundColor}
           onChange={(e) => setBackgroundColor(e.target.value)}
-          className="border border-gray-300 p-2 rounded w-full"
+          className="border border-gray-300 p-1 rounded"
         />
       </div>
+
       <button
         onClick={handleApplyFormatting}
         className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
       >
-        Apply Formatting
+        Apply
       </button>
     </div>
   );
